@@ -1,3 +1,11 @@
+#!/usr/bin/env python2.7
+
+# =============================================================================
+# Date:     November, 2017
+# Author:   Marcelo Villa P.
+# Purpose:  Extract a predefined number of cells with the lowest cell values.
+# =============================================================================
+
 from osgeo.gdalconst import *
 from osgeo import gdal
 import numpy as np
@@ -6,7 +14,7 @@ import numpy as np
 gdal.UseExceptions()
 
 # open raster and read it as a numpy array
-ds = gdal.Open("my.tif")
+ds = gdal.Open("my.tif")  # input TIFF file
 arr = np.array(ds.GetRasterBand(1).ReadAsArray())
 
 # convert NoData values in the array to np.nan
@@ -21,7 +29,7 @@ size = cols * rows
 perc = 0.05  # percentage
 k = int(size * perc)  # 5% cells of the raster
 
-# create arrays with the lowest 0.1% 5% cells of the original raster
+# create arrays with the lowest 5% cells of the original raster
 values = np.partition(arr.flatten(), k)[:k]
 arr = np.where(np.isin(arr, values), arr, np.nan)  # lowest 5%
 

@@ -1,3 +1,11 @@
+#!/usr/bin/env python2.7
+
+# =============================================================================
+# Date:     February, 2018
+# Author:   Marcelo Villa P.
+# Purpose:  Converts a shapefile's attribute table to a csv file.
+# =============================================================================
+
 from osgeo import ogr
 import pandas as pd
 
