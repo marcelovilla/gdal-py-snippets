@@ -3,7 +3,7 @@
 # =============================================================================
 # Date:     November, 2017
 # Author:   Marcelo Villa P.
-# Purpose:  Extract a predefined number of cells with the lowest cell values.
+# Purpose:  Extracts a predefined number of cells with the lowest cell values.
 # =============================================================================
 
 from osgeo.gdalconst import *
