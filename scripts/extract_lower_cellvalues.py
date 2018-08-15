@@ -40,7 +40,7 @@ dsOut = driver.Create('output.tif', cols, rows, 1, GDT_Float64)
 # get raster band
 outBand = dsOut.GetRasterBand(1)
 
-# write the data for each image
+# write the data to the output TIFF file
 outBand.WriteArray(arr, 0, 0)
 
 # flush data to the disk and set the NoData value
@@ -51,6 +51,6 @@ outBand.SetNoDataValue(-9999)
 dsOut.SetGeoTransform(ds.GetGeoTransform())
 dsOut.SetProjection(ds.GetProjection())
 
-# Close raster file and delete variables
+# close raster file and delete variables
 dsOut = None
 del ds, dsOut, outBand
