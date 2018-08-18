@@ -5,8 +5,8 @@
 # Author:   Marcelo Villa P.
 # Purpose:  Creates a specific number of random points (samples) over a raster.
 # Notes:    `val`, declared in line 31 may be any number but must be different
-#           than NoData value and any other cell value that the raster
-#           may have.
+#           than NoData value and any other cell value that the raster might
+#           have.
 # =============================================================================
 
 
