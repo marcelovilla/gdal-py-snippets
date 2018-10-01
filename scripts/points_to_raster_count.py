@@ -68,7 +68,7 @@ lyr = input_ds.GetLayer(0)
 # iterate through the points
 for point in lyr:
 
-    # get (transformed) x and y coordinates
+    # get x and y coordinates
     geom = point.geometry()
     x = geom.GetX()
     y = geom.GetY()
@@ -106,9 +106,3 @@ band.WriteArray(arr)
 # flush to disk and delete data sets
 band.FlushCache()
 del input_ds, output_ds
-
-
-
-
-
-
