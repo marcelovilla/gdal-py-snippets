@@ -24,5 +24,3 @@ res = hdf.GetGeoTransform()[1]
 # call gdal Translate
 out_ds = gdal.Translate(destName='output.tif', srcDS=hdf, xRes=res, yRes=res)
 del out_ds
-
-
