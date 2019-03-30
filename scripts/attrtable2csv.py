@@ -1,9 +1,9 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python
 
 # =============================================================================
 # Date:     February, 2018
 # Author:   Marcelo Villa P.
-# Purpose:  Converts a shapefile's attribute table to a csv file.
+# Purpose:  Saves a shapefile's attribute table to a csv file.
 # =============================================================================
 
 from osgeo import ogr

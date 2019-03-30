@@ -1,14 +1,14 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env
 
 # =============================================================================
 # Date:     February, 2018
 # Author:   Marcelo Villa P.
-# Purpose:  Resamples a raster to a new resolution without interpolation.
+# Purpose:  Resamples a raster to a new resolution.
 # Notes:    This script has been slightly adapted from Chris Garrards's
-#           "Geoprocessing with Python" book. In this case the script re-
-#           samples to a resolution three times higher (pixel size is one
-#           sixth of the original pixel size) than the original file. This
-#           relation can easily be changed on lines 24-25 and 34-35.
+#           "Geoprocessing with Python" book. In this case the script resamples
+#           to a resolution three times higher (pixel size is one sixth of
+#           the original pixel size) than the original file. This relation can
+#           easily be changed on lines 24-25 and 34-35.
 # =============================================================================
 
 from osgeo import gdal
