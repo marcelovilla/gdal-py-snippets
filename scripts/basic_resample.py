@@ -1,5 +1,4 @@
-#!/usr/bin/env
-
+#!/usr/bin/env python
 # =============================================================================
 # Date:     February, 2018
 # Author:   Marcelo Villa P.
@@ -10,7 +9,6 @@
 #           the original pixel size) than the original file. This relation can
 #           easily be changed on lines 24-25 and 34-35.
 # =============================================================================
-
 from osgeo import gdal
 
 # enable gdal exceptions

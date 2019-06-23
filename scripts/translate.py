@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 # =============================================================================
 # Date:     October, 2018
 # Author:   Marcelo Villa P.
@@ -10,7 +9,6 @@
 #           available at:
 #           https://gdal.org/python/osgeo.gdal-module.html#TranslateOptions
 # =============================================================================
-
 from osgeo import gdal
 
 # open dataset, get subsets and open one of them

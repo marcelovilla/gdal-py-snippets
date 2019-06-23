@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 # =============================================================================
 # Date:     May, 2018
 # Author:   Marcelo Villa P.
@@ -8,8 +7,6 @@
 #           than NoData value and any other cell value that the raster might
 #           have.
 # =============================================================================
-
-
 from osgeo import gdal
 from osgeo import ogr
 from osgeo import osr
@@ -43,7 +40,6 @@ arr[indices[0][ind], indices[1][ind]] = val
 # calculate x and y coordinates
 x_coords = x_index * x_size + upper_left_x + (x_size / 2)
 y_coords = y_index * y_size + upper_left_y + (y_size / 2)
-
 
 # create samples
 fn = "my.shp"   # output shapefile name

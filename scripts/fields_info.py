@@ -1,11 +1,9 @@
 #!/usr/bin/env python
-
 # =============================================================================
 # Date:     December, 2018
 # Author:   Marcelo Villa P.
 # Purpose:  Prints information about a shapefile's fields.
 # =============================================================================
-
 from osgeo import ogr
 
 ds = ogr.Open('my.shp', 0)

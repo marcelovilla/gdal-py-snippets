@@ -8,12 +8,12 @@
 # Notes:    The point data set and the raster must have the same spatial
 #           reference.
 # =============================================================================
+import math
 
 from osgeo import gdal
 from osgeo import ogr
 from osgeo import osr
 import numpy as np
-import math
 
 
 def get_indices(x, y, ox, oy, pw, ph):
@@ -67,7 +67,6 @@ lyr = input_ds.GetLayer(0)
 
 # iterate through the points
 for point in lyr:
-
     # get x and y coordinates
     geom = point.geometry()
     x = geom.GetX()

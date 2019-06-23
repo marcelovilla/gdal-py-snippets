@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/env python
 # =============================================================================
 # Date:     October, 2018
 # Author:   Marcelo Villa P.
@@ -8,7 +7,6 @@
 #           utility) takes different options. A list of these is available at:
 #           https://gdal.org/python/osgeo.gdal-module.html#WarpOptions
 # =============================================================================
-
 from osgeo import gdal
 from osgeo import osr
 

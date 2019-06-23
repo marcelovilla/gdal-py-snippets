@@ -11,7 +11,7 @@
 from osgeo import ogr
 
 fn = r'my.kml'  # KML file
-dst = r"output_folder"  # Output directory
+dst = r'output_folder'  # Output directory
 
 # open and read KML file
 driver = ogr.GetDriverByName('KML')
@@ -26,7 +26,7 @@ new_feat = ogr.Feature(layer.GetLayerDefn())  # Dummy feature
 
 # iterate through all the features and create a new KML file for each one
 for id, feat in enumerate(layer):
-    new_ds = driver.CreateDataSource(r"{}\feat_{}.kml".format(dst, id))
+    new_ds = driver.CreateDataSource(r'{}\feat_{}.kml'.format(dst, id))
     new_lyr = new_ds.CreateLayer('feat_{}'.format(id), sr, ogr.wkbPolygon)
     geom = feat.geometry().Clone()
     new_feat.SetGeometry(geom)
