@@ -4,14 +4,11 @@
 # Author:   Marcelo Villa P.
 # Purpose:  Saves a shapefile's attribute table to a csv file.
 # =============================================================================
-from osgeo import ogr
+import ogr
 import pandas as pd
 
-# enable ogr exceptions
-ogr.UseExceptions()
-
-fn = r"my.shp"   # input shapefile
-csv = r"my.csv"  # output csv
+fn = '../data/vector/ne_110m_admin_0_countries.shp'   # input shapefile
+out_fn = '../data/csv/ne_110m_admin_0_countries.csv'  # output csv
 
 # open shapefile and get layer definition
 ds = ogr.Open(fn, 0)
@@ -35,5 +32,5 @@ for ind, feat in enumerate(lyr):
     df.loc[ind] = vals
 
 # save csv and close shapefile
-df.to_csv(csv, index_label='FID')
+df.to_csv(out_fn, index_label='FID')
 del ds
