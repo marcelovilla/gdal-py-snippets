@@ -33,7 +33,7 @@ Computes proximity (euclidean distance) in pixels from each cell to a target val
 #### 3. [euclidean_distance][6]
 Computes the euclidean distance (in pixels) from each cell to a target value. Similar to [compute_proximity][5] but instead of using `gdal`'s built-in function an own implementation of the distance computation is presented. In this case, the target values are the rasterized lines produced in [rasterize][9]. This snippet uses `numpy` to vectorize the distance computation (following [Pythagoras' theorem][7]). It creates a distance matrix to each target value (*i.e.* each value different from NoData). Then, the minimum distance value for each cell is retrieved and a single distance matrix is returned.
 
-#### 4. [extract_lowest_cell_values][8]<sup>*</sup>
+#### 4. [extract_lowest_cell_values][8]
 Extracts an arbitrary percentage (5% in this case) of the lowest cell values in the raster.
 
 #### 4. [raster_up_sample][9]<sup>*</sup>
