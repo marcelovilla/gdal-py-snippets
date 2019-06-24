@@ -3,6 +3,7 @@
 # Date:     June, 2019
 # Author:   Marcelo Villa P.
 # Purpose:  Creates a raster with the (pixel) distance to the closest target.
+# Notes:    Own implementation of distance calculation using NumPy.
 # =============================================================================
 import gdal
 import numpy as np
