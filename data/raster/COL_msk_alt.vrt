@@ -1,0 +1,19 @@
+<VRTDataset rasterXSize="1800" rasterYSize="2136">
+  <SRS>GEOGCS["WGS 84",DATUM["unknown",SPHEROID["WGS84",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433]]</SRS>
+  <GeoTransform> -8.1799999999999997e+01,  8.3333330000000001e-03,  0.0000000000000000e+00,  1.3500000000000000e+01,  0.0000000000000000e+00, -8.3333330000000001e-03</GeoTransform>
+  <VRTRasterBand dataType="Int16" band="1" subClass="VRTRawRasterBand">
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">5132</MDI>
+      <MDI key="STATISTICS_MEAN">557.46247172527</MDI>
+      <MDI key="STATISTICS_MINIMUM">-2</MDI>
+      <MDI key="STATISTICS_STDDEV">831.3290074435</MDI>
+    </Metadata>
+    <Description>COL_msk_alt</Description>
+    <NoDataValue>-9999</NoDataValue>
+    <SourceFilename relativeToVRT="1">COL_msk_alt.gri</SourceFilename>
+    <ImageOffset>0</ImageOffset>
+    <PixelOffset>2</PixelOffset>
+    <LineOffset>3600</LineOffset>
+    <ByteOrder>LSB</ByteOrder>
+  </VRTRasterBand>
+</VRTDataset>
