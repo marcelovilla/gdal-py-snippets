@@ -27,9 +27,10 @@ Here is a brief explanation for each snippet:
 Saves a shapefile's attribute table to a given csv file using `ogr` and `pandas`. The program iterates through each feature in the shapefile and then iterates through each one of its fields, storing the values in a `DataFrame`. The `DataFrame` is then converted to a csv file.
 
 #### 2. [compute_proximity][5]
+Computes proximity (euclidean distance) in pixels from each cell to a target value using the `gdal.ComputeProximity()` function. The input raster is the output from [rasterize][9].
 
 #### 3. [euclidean_distance][6]
-Computes the euclidean distance (in pixels) from each cell to a target value. In this case, the target values are the rasterized lines produced in [rasterize][9]. This snippet uses `numpy` to vectorize the distance computation (following [Pythagoras' theorem][7]). It creates a distance matrix to each target value (*i.e.* each value different from NoData). Then, the minimum distance value for each cell is retrieved and a single distance matrix is returned.
+Computes the euclidean distance (in pixels) from each cell to a target value. Similar to [compute_proximity][5] but instead of using `gdal`'s built-in function an own implementation of the distance computation is presented. In this case, the target values are the rasterized lines produced in [rasterize][9]. This snippet uses `numpy` to vectorize the distance computation (following [Pythagoras' theorem][7]). It creates a distance matrix to each target value (*i.e.* each value different from NoData). Then, the minimum distance value for each cell is retrieved and a single distance matrix is returned.
 
 #### 4. [raster_up_sample][8]<sup>*</sup>
 Resamples (up-samples) a raster to a higher resolution. In order to do this it reads the original `GeoTransform` and changes the pixel width and pixel height to be proportionally smaller. Then it reads the data from the original dataset specifying `buf_xsize` and `buf_ysize` so the array where the data is going to be stored fits the new dimensions. When specifying a bigger buffer than the original raster dimensions in the `ReadAsArray()` method, original values are repeated to fit the new dimensions.
