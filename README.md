@@ -42,10 +42,10 @@ Rasterizes a shapefile. It uses `ogr` to open a shapefile and get its extent. Th
 [1]: http://worldclim.org/version2
 [2]: https://www.diva-gis.org/gdata
 [3]: https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/
-[4]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/attribute_table_to_csv
-[5]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/compute_proximity
-[6]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/euclidean_distance
+[4]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/attribute_table_to_csv.py
+[5]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/compute_proximity.py
+[6]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/euclidean_distance.py
 [7]: https://en.wikipedia.org/wiki/Pythagorean_theorem
-[8]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/raster_up_sample
+[8]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/raster_up_sample.py
 [9]: https://www.manning.com/books/geoprocessing-with-python
-[10]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/rasterize
+[10]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/rasterize.py
