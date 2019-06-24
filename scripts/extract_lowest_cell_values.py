@@ -3,7 +3,9 @@
 # Date:     November, 2017
 # Author:   Marcelo Villa P.
 # Purpose:  Extracts an arbitrary percentage of cells with the lowest values
-#           in a raster
+#           in a raster.
+# Notes:    The code to extract the lowest k elements in a numpy array was
+#           taken from https://stackoverflow.com/a/34226816/7144368.
 # =============================================================================
 import gdal
 import numpy as np
