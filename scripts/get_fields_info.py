@@ -4,9 +4,9 @@
 # Author:   Marcelo Villa P.
 # Purpose:  Prints information about a shapefile's fields.
 # =============================================================================
-from osgeo import ogr
+import ogr
 
-ds = ogr.Open('my.shp', 0)
+ds = ogr.Open('../data/vector/ne_110m_admin_0_countries.shp', 0)
 lyr = ds.GetLayer(0)
 lyr_dfn = lyr.GetLayerDefn()
 

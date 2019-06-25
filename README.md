@@ -13,9 +13,9 @@ All the snippets in this repository use open data. Here is a table with the desc
 
 | Dataset                   | Description                                             | Type   | Extension | Source             |
 |---------------------------|---------------------------------------------------------|--------|-----------|--------------------|
-| wc2.0_10m_prec_01         | Average January global precipitation from 1970 to 2000. | Raster | .tif      | [WorldClim][1]     |
-| COL_msk_alt               | Elevation for Colombia (country mask)                   | Raster | .vrt      | [DIVA_GIS][2]      |
-| COL_rails                 | Colombian railroads                                     | Vector | .shp      | [DIVA_GIS][2]      |
+| COL_msk_alt               | Elevation for Colombia (country mask)                   | Raster | .vrt      | [DIVA_GIS][1]      |
+| wc2.0_10m_prec_01         | Average January global precipitation from 1970 to 2000. | Raster | .tif      | [WorldClim][2]     |
+| COL_rails                 | Colombian railroads                                     | Vector | .shp      | [DIVA_GIS][1]      |
 | ne_110m_admin_0_countries | Administrative boundaries (countries) of the world.     | Vector | .shp      | [Natural Earth][3] |
 
 <sup>*I do not own any of the datasets here presented.</sup>
@@ -36,22 +36,30 @@ Computes the euclidean distance (in pixels) from each cell to a target value. Si
 #### 4. [extract_lowest_cell_values][8]
 Extracts an arbitrary percentage (5% in this case) of the lowest cell values in the raster.
 
-#### 4. [raster_up_sample][9]<sup>*</sup>
+#### 5. [get_fields_info][9]
+Loops through each field in a shapefile and prints information about them.
+
+#### 5. [get_pixel_coordinates][10]
+Creates two grids with the corresponding x and y coordinates of each pixel center in a raster.
+
+#### 6. [raster_up_sample][11]<sup>*</sup>
 Resamples (up-samples) a raster to a higher resolution. In order to do this it reads the original `GeoTransform` and changes the pixel width and pixel height to be proportionally smaller. Then it reads the data from the original dataset specifying `buf_xsize` and `buf_ysize` so the array where the data is going to be stored fits the new dimensions. When specifying a bigger buffer than the original raster dimensions in the `ReadAsArray()` method, original values are repeated to fit the new dimensions.
 
-<sup>*This snippet was slightly adapted from one example presented by Chris Garrard in [Geoprocessing with Python's][10] 9th chapter.</sup>
+<sup>*This snippet was slightly adapted from one example presented by Chris Garrard in [Geoprocessing with Python's][12] 9th chapter.</sup>
 
-#### 5. [rasterize][11]
+#### 5. [rasterize][13]
 Rasterizes a shapefile. It uses `ogr` to open a shapefile and get its extent. Then it creates an empty raster with the same extent as the shapefile and an arbitrary value for the pixel resolution. It uses the `gdal.RasterizeLayer()` function to burn the raster´s band (*i.e.* first and only band) with a 1 where the shapefile presents a feature. The rest is set as NoData.
 
-[1]: http://worldclim.org/version2
-[2]: https://www.diva-gis.org/gdata
+[1]: https://www.diva-gis.org/gdata
+[2]: http://worldclim.org/version2
 [3]: https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/
 [4]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/attribute_table_to_csv.py
 [5]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/compute_proximity.py
 [6]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/euclidean_distance.py
 [7]: https://en.wikipedia.org/wiki/Pythagorean_theorem
 [8]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/extract_lowest_cell_values.py
-[9]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/raster_up_sample.py
-[10]: https://www.manning.com/books/geoprocessing-with-python
-[11]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/rasterize.py
+[9]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/get_fields_info.py
+[10]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/get_pixel_coordinates.py
+[11]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/raster_up_sample.py
+[12]: https://www.manning.com/books/geoprocessing-with-python
+[13]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/rasterize.py
