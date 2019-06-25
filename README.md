@@ -39,15 +39,15 @@ Extracts an arbitrary percentage (5% in this case) of the lowest cell values in 
 #### 5. [get_fields_info][9]
 Loops through each field in a shapefile and prints information about them.
 
-#### 5. [get_pixel_coordinates][10]
+#### 6. [get_pixel_coordinates][10]
 Creates two grids with the corresponding x and y coordinates of each pixel center in a raster.
 
-#### 6. [raster_up_sample][11]<sup>*</sup>
+#### 7. [raster_up_sample][11]<sup>*</sup>
 Resamples (up-samples) a raster to a higher resolution. In order to do this it reads the original `GeoTransform` and changes the pixel width and pixel height to be proportionally smaller. Then it reads the data from the original dataset specifying `buf_xsize` and `buf_ysize` so the array where the data is going to be stored fits the new dimensions. When specifying a bigger buffer than the original raster dimensions in the `ReadAsArray()` method, original values are repeated to fit the new dimensions.
 
 <sup>*This snippet was slightly adapted from one example presented by Chris Garrard in [Geoprocessing with Python's][12] 9th chapter.</sup>
 
-#### 5. [rasterize][13]
+#### 8. [rasterize][13]
 Rasterizes a shapefile. It uses `ogr` to open a shapefile and get its extent. Then it creates an empty raster with the same extent as the shapefile and an arbitrary value for the pixel resolution. It uses the `gdal.RasterizeLayer()` function to burn the raster´s band (*i.e.* first and only band) with a 1 where the shapefile presents a feature. The rest is set as NoData.
 
 [1]: https://www.diva-gis.org/gdata
