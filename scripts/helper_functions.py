@@ -5,6 +5,7 @@
 # Purpose:  Stores helper functions used in other scripts.
 # =============================================================================\
 import gdal
+import numpy as np
 
 
 def array_to_tiff(arr, fn, sr, geotransform, gdtype, nd_val):
@@ -34,3 +35,16 @@ def array_to_tiff(arr, fn, sr, geotransform, gdtype, nd_val):
     # flush to disk
     band.FlushCache()
     del out_tiff, band
+
+
+def create_random_points(bbox, n):
+    """
+    Creates two arrays of random x and y coordinates within a bounding box.
+    :param bbox:    tuple (xmin, ymin, xmax, y max)
+    :param n:       number of points
+    :return:        tuple with two 1D arrays with the respective coordinates.
+    """
+    x = np.random.uniform(bbox[0], bbox[2], n)
+    y = np.random.uniform(bbox[1], bbox[3], n)
+
+    return x, y
