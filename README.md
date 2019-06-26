@@ -1,9 +1,8 @@
 # gdal-py-snippets
-This repository presents a wide range of different-purpose small examples using the gdal-python bindings (both `gdal` and `ogr`). It uses a fair amount of `numpy` as well, along with other third party packages such as `pandas` and `geopandas`.
+This repository presents a wide range of different-purpose small examples using the gdal-python bindings (both `gdal` and `ogr`). It uses a fair amount of `numpy` as well, along with other third party packages such as `pandas`.
 
 The programs presented in this repository were developed using Python 3.6.5 and the following packages versions:
 * `gdal` version: 2.3.3
-* `geopandas` version: 0.4.0
 * `numpy` version: 1.14.3
 * `pandas` version: 0.24.2
 
@@ -42,12 +41,15 @@ Loops through each field in a shapefile and prints information about them.
 #### 6. [get_pixel_coordinates][10]
 Creates two grids with the corresponding x and y coordinates of each pixel center in a raster.
 
-#### 7. [raster_up_sample][11]<sup>*</sup>
+#### 7. [get_pixel_values][11]
+Gets an array of pixel values correspondent to a set of points within a raster's extent. Points are presented as a tuple of 1D arrays with x and y coordinates. It converts coordinates to array indices and retrieve the values by indexing the data array.
+
+#### 7. [raster_up_sample][12]<sup>*</sup>
 Resamples (up-samples) a raster to a higher resolution. In order to do this it reads the original `GeoTransform` and changes the pixel width and pixel height to be proportionally smaller. Then it reads the data from the original dataset specifying `buf_xsize` and `buf_ysize` so the array where the data is going to be stored fits the new dimensions. When specifying a bigger buffer than the original raster dimensions in the `ReadAsArray()` method, original values are repeated to fit the new dimensions.
 
-<sup>*This snippet was slightly adapted from one example presented by Chris Garrard in [Geoprocessing with Python's][12] 9th chapter.</sup>
+<sup>*This snippet was slightly adapted from one example presented by Chris Garrard in [Geoprocessing with Python's][13] 9th chapter.</sup>
 
-#### 8. [rasterize][13]
+#### 8. [rasterize][14]
 Rasterizes a shapefile. It uses `ogr` to open a shapefile and get its extent. Then it creates an empty raster with the same extent as the shapefile and an arbitrary value for the pixel resolution. It uses the `gdal.RasterizeLayer()` function to burn the raster´s band (*i.e.* first and only band) with a 1 where the shapefile presents a feature. The rest is set as NoData.
 
 [1]: https://www.diva-gis.org/gdata
@@ -60,6 +62,7 @@ Rasterizes a shapefile. It uses `ogr` to open a shapefile and get its extent. Th
 [8]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/extract_lowest_cell_values.py
 [9]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/get_fields_info.py
 [10]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/get_pixel_coordinates.py
-[11]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/raster_up_sample.py
-[12]: https://www.manning.com/books/geoprocessing-with-python
-[13]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/rasterize.py
+[11]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/get_pixel_values.py
+[12]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/raster_up_sample.py
+[13]: https://www.manning.com/books/geoprocessing-with-python
+[14]: https://github.com/marcelovilla9/gdal-py-snippets/blob/master/scripts/rasterize.py
